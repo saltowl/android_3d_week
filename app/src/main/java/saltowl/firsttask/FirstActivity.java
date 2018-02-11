@@ -1,5 +1,6 @@
 package saltowl.firsttask;
 
+import android.content.Intent;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,31 +12,31 @@ import android.widget.Toast;
 
 public class FirstActivity extends AppCompatActivity {
 
-    private EditText mText;
-    private Button mButton;
+    private EditText mText1;
+    private Button mButton1;
 
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view)
         {
-            if (!TextUtils.isEmpty(mText.getText()))
-                showSting(mText);
+            if (!TextUtils.isEmpty(mText1.getText()))
+            {
+                Intent startSecondIntent =
+                        new Intent(FirstActivity.this, SecondActivity.class);
+                startSecondIntent.putExtra(SecondActivity.SOME_KEY, mText1.getText().toString());
+                startActivity(startSecondIntent);
+            }
         }
     };
-
-    private void showSting (EditText string)
-    {
-        Toast.makeText(this, string.getText().toString(), Toast.LENGTH_LONG).show();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        mText = findViewById(R.id.sText);
-        mButton = findViewById(R.id.sButton);
+        mText1 = findViewById(R.id.sText);
+        mButton1 = findViewById(R.id.sButton);
 
-        mButton.setOnClickListener(mOnClickListener);
+        mButton1.setOnClickListener(mOnClickListener);
     }
 }
