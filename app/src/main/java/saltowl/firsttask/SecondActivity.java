@@ -1,8 +1,7 @@
 package saltowl.firsttask;
 
-/**
- * Created by saltowl on 11.02.2018.
- */
+import android.support.v7.app.AppCompatActivity;
 
-public class SecondActivity {
+public class SecondActivity extends AppCompatActivity
+{
 }
