@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">FirstTask</string>
     <string name="s_button_text">Click</string>
+    <string name="error_browser">No application can handle this request. Please install a web-browser</string>
 </resources>
